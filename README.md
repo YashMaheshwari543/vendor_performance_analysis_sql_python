@@ -1,141 +1,284 @@
-# Vendor Performance Analysis
+# 🚀 Vendor Performance Analysis | SQL + Python + Data Analytics
 
-## Project Overview
+## 📌 Executive Summary
 
-This project analyzes vendor performance using Python, SQL, and Streamlit.
----
+This project delivers an end-to-end Vendor Performance Analytics solution designed to evaluate supplier profitability, inventory efficiency, purchasing patterns, and sales performance.
 
-## Table of Contents
-<a href="#overview">Overview</a>
-<a href="#business-problem">Business Problem</a>
-<a href="#dataset">Dataset</a>
-<a href="#tools--technologies">Tools & Technologies</a>
-<a href="#project-structure">Project Structure</a>
-<a href="#data-cleaning--preparation">Data Cleaning & Preparation</a>
-<a href="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a>
-<a href="#research-questions--key-findings">Research Questions & Key Findings</a>
-<a href="#dashboard">Dashboard</a>
-<a href="#how-to-run-this-project">How to Run This Project</a>
-<a href="#final-recommendations">Final Recommendations</a>
-<a href="#author--contact">Author & Contact</a>
----
+Using SQL-based ETL pipelines, Python-driven exploratory analysis, statistical testing, and business intelligence techniques, the project transforms raw transactional data into actionable business insights that can support strategic purchasing and inventory decisions.
 
-<h2><a class="anchor" id="overview"></a>Overview</h2>
-
-This project evaluates vendor performance and retail inventory dynamics to drive strategic insights for purchasing, pricing, and inventory optimization. A complete data pipeline was built using SQL for ETL, Python for analysis and hypothesis testing, and Power BI for visualization.
+The objective is to help organizations identify high-performing vendors, optimize procurement strategies, reduce inventory holding costs, and maximize profitability.
 
 ---
 
-<h2><a class="anchor" id="business-problem"></a>Business Problem</h2>
+## 🎯 Business Problem
 
-Effective inventory and sales management are critical in the retail sector. This project aims to:
+Retail businesses often struggle to answer critical questions such as:
 
-- Identify underperforming brands needing pricing or promotional adjustments
-- Determine vendor contributions to sales and profits
-- Analyze the cost-benefit of bulk purchasing
-- Investigate inventory turnover inefficiencies
-- Statistically validate differences in vendor profitability
+* Which vendors generate the highest revenue?
+* Which vendors contribute the highest profit?
+* Are bulk purchases actually reducing costs?
+* Which products are causing inventory inefficiencies?
+* Which vendors should be prioritized for future procurement?
+* Which brands are underperforming despite strong sales volume?
 
----
-
-<h2><a class="anchor" id="dataset"></a>Dataset</h2>
-
-- Multiple CSV files located in `/data/` folder (sales, vendors, inventory)
-- Summary table created from ingested data and used for analysis
+This project addresses these challenges through data-driven analysis and statistical validation.
 
 ---
 
-<h2><a class="anchor" id="tools--technologies"></a>Tools & Technologies</h2>
+## 🏗️ Project Architecture
 
-- SQL (Common Table Expressions, Joins, Filtering)
-- Python (Pandas, Matplotlib, Seaborn, SciPy)
+```text
+Raw CSV Files
+      │
+      ▼
+Data Ingestion Pipeline
+      │
+      ▼
+SQLite Database
+      │
+      ▼
+Vendor Summary Generation
+      │
+      ▼
+Exploratory Data Analysis
+      │
+      ▼
+Statistical Testing
+      │
+      ▼
+Business Insights & Recommendations
+```
 
-- GitHub
 ---
 
-<h2><a class="anchor" id="project-structure"></a>Project Structure</h2>
+## 📂 Dataset Overview
+
+The project integrates multiple business datasets:
+
+### Vendor Data
+
+* Vendor Information
+* Purchase Records
+* Purchase Prices
+
+### Inventory Data
+
+* Beginning Inventory
+* Ending Inventory
+* Unsold Stock Analysis
+
+### Sales Data
+
+* Product Sales
+* Sales Quantity
+* Revenue Metrics
+
+### Invoice Data
+
+* Vendor Invoices
+* Freight Cost Information
+
+These datasets are combined into a consolidated vendor performance model for analysis.
+
+---
+
+## ⚙️ Technologies Used
+
+### Programming & Analytics
+
+* Python
+* SQL
+* SQLite
+
+### Python Libraries
+
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* SciPy
+* SQLAlchemy
+
+### Development Tools
+
+* Jupyter Notebook
+* Git
+* GitHub
+
+---
+
+## 🔄 ETL Pipeline
+
+A complete ETL workflow was implemented:
+
+### Extract
+
+* Imported multiple CSV files
+
+### Transform
+
+* Data Cleaning
+* Null Value Handling
+* Duplicate Removal
+* Data Type Conversion
+* Vendor-Level Aggregation
+
+### Load
+
+* Loaded processed datasets into SQLite database
+* Generated analytical summary tables
+
+---
+
+## 📊 Exploratory Data Analysis
+
+The project performs comprehensive analysis including:
+
+### Revenue Analysis
+
+* Top Revenue Generating Vendors
+* Vendor Revenue Distribution
+
+### Profitability Analysis
+
+* Gross Profit Analysis
+* Profit Margin Evaluation
+* Vendor Profit Ranking
+
+### Inventory Analysis
+
+* Unsold Inventory Assessment
+* Inventory Turnover Analysis
+* Stock Optimization Opportunities
+
+### Purchasing Analysis
+
+* Purchase Cost Evaluation
+* Bulk Purchase Impact Analysis
+* Freight Cost Assessment
+
+### Correlation Analysis
+
+* Purchase Quantity vs Sales Quantity
+* Purchase Price vs Profitability
+* Sales Performance Relationships
+
+---
+
+## 📈 Key Business Insights
+
+### 💰 Revenue Concentration
+
+A small group of vendors contributes a significant portion of total revenue, indicating supplier concentration.
+
+### 📦 Inventory Optimization Opportunity
+
+Several products showed high unsold inventory levels, highlighting opportunities for inventory reduction and better demand planning.
+
+### 📉 Margin Leakage
+
+Certain vendors generated strong sales volume but produced relatively low profit margins.
+
+### 🚚 Freight Cost Impact
+
+Freight expenses significantly influenced overall profitability for some vendor groups.
+
+### 📊 Purchasing Efficiency
+
+Bulk purchasing demonstrated measurable cost advantages for selected products and vendors.
+
+---
+
+## 🧪 Statistical Analysis
+
+Hypothesis testing was performed to validate business assumptions rather than relying solely on descriptive analytics.
+
+Key objectives included:
+
+* Vendor profitability comparison
+* Margin performance validation
+* Statistical significance testing
+* Data-driven business recommendations
+
+This strengthens decision-making confidence for stakeholders.
+
+---
+
+## 📋 Business Recommendations
+
+Based on the analysis:
+
+✅ Prioritize high-margin vendors
+
+✅ Review low-profit, high-volume suppliers
+
+✅ Optimize slow-moving inventory
+
+✅ Negotiate freight-intensive vendor contracts
+
+✅ Expand relationships with high-performing vendors
+
+✅ Improve inventory planning using sales trends
+
+---
+
+## 📁 Project Structure
 
 ```text
 vendor_analysis2/
 │
-├── README.md
-├── .gitignore
-├── requirements.txt
+├── data/
+│   ├── sales.csv
+│   ├── purchases.csv
+│   ├── purchase_prices.csv
+│   ├── begin_inventory.csv
+│   ├── end_inventory.csv
+│   └── vendor_invoice.csv
 │
-├── notebooks/                 # Jupyter notebooks
-│   ├── exploratory_data_analysis.ipynb
-│   └── vendor_performance_analysis.ipynb
+├── notebook/
+│   ├── Exploratory_Data_Analysis.ipynb
+│   └── Vendor_Performance_Analysis.ipynb
 │
-├── scripts/                   # Python scripts
+├── scripts/
 │   ├── ingestion_db.py
 │   └── get_vendor_summary.py
 │
-│
-├── data/                      # Raw datasets
-│
-└── inventory.db              # SQLite database
----
-
-<h2><a class="anchor" id="data-cleaning--preparation"></a>Data Cleaning & Preparation</h2>
-
-- Removed duplicate records
-- Handled missing values
-- Standardized column names and data types
-- Merged vendor, sales, and inventory datasets
-- Created summary tables with vendor-level metrics
-- Converted data types and handled outliers
+├── logs/
+├── README.md
+└── .gitignore
+```
 
 ---
 
-<h2><a class="anchor" id="exploratory-data-analysis-eda"></a>Exploratory Data Analysis (EDA)</h2>
+## 🎓 Skills Demonstrated
 
-**Negative or Zero Values Detected
-
-- Gross Profit: Negative values indicating loss-making sales
-- Profit Margin: Sales at or below cost
-- Unsold Inventory: Indicates slow-moving stock
-
-**Outliers Identified
-
-- High freight costs
-- Large purchase and actual price differences
-
-**Correlation Analysis
-
-- Weak relationship between Purchase Price and Profit
-- Strong relationship between Purchase Quantity and Sales Quantity
-- Negative relationship between Profit Margin and Sales Price
+* SQL Query Writing
+* Data Cleaning
+* Data Wrangling
+* ETL Development
+* Exploratory Data Analysis
+* Statistical Testing
+* Data Visualization
+* Business Analytics
+* Inventory Analytics
+* Vendor Performance Evaluation
 
 ---
 
-<h2><a class="anchor" id="research-questions--key-findings"></a>Research Questions & Key Findings</h2>
+## 📌 Project Outcome
 
-1. Which vendors generate the highest revenue?
-2. Which vendors contribute the most profit?
-3. Are there vendors with high sales but low profitability?
-4. What products experience inventory turnover issues?
-5. Which vendors should be prioritized for future purchasing?
+This project demonstrates how raw retail transaction data can be transformed into strategic business intelligence through SQL, Python, and statistical analysis.
 
-### Findings
-
-- Top vendors contributed the majority of total revenue
-- Several vendors showed high sales volume but low margins
-- Inventory inefficiencies were found in slow-moving products
-- Vendor profitability varied significantly across categories
+The final solution enables organizations to make informed procurement, inventory, and vendor management decisions using data rather than intuition.
 
 ---
 
-<h2><a class="anchor" id="dashboard"></a>Dashboard</h2>
+## 👨‍💻 Author
 
+**Yash Maheshwari**
 
----
+Aspiring Data Analyst | SQL | Python | Data Visualization | Statistics | Machine Learning
 
-<h2><a class="anchor" id="how-to-run-this-project"></a>How To Run This Project</h2>
+📧 Open to Data Analyst, Business Analyst, and Data Science opportunities.
 
-1. Clone the repository
-
-```bash
-git clone https://github.com/yourusername/vendor_analysis2.git
-<h2><a class="anchor" id="how-to-run-this-project"></a>How To Run This Project</h2>
-
-python scripts/ingestion_db.py
+⭐ If you found this project valuable, consider giving the repository a star.
